@@ -1,0 +1,69 @@
+// =======================
+// ===== DEFINE VARS =====
+// =======================
+$cols : 12;
+$gutter : 1rem;  // <-- %, em, rem, px, etc.
+                 // nested columns don't work well
+                 // with % based gutters
+
+
+
+ // =======================
+ // ====== FUNCTIONS ======
+ // =======================
+ @function span($span, $cols: $cols) {
+   @return percentage($span / $cols);
+ }
+
+
+// =======================
+// ==== DEFINE MIXINS ====
+// =======================
+@mixin cols($flex: flex, $dir: row, $wrap: wrap, $justify: flex-start, $align-items: flex-start) {
+  margin: 0 $gutter / -2;
+
+  @if $flex == false {
+
+    @include clearfix;
+
+  } @else {
+
+    display: $flex;
+    flex-direction: $dir;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align-items;
+
+  }
+}
+
+@mixin span($span, $cols: $cols) {
+  width: span($span, $cols);
+  padding: 0 $gutter / 2;
+  box-sizing: border-box;
+}
+
+@mixin flex-span($span, $cols: $cols, $order: null) {
+  @include span($span, $cols: $cols);
+  
+  @if $order {
+    order: $order;
+  }
+}
+
+@mixin float-span($span, $cols: $cols, $float: left) {
+  @include span($span, $cols: $cols);
+  float: $float;
+}
+
+@mixin offset($span, $direction: left, $cols: $cols) {
+  margin-#{$direction}: percentage($span / $cols);
+}
+
+@mixin clearfix {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
