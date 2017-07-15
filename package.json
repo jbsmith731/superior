@@ -1,0 +1,27 @@
+{
+  "name": "superior-scss",
+  "version": "1.0.0",
+  "description": "Flexible scss grid system",
+  "main": "superior.scss",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jbsmith731/superior.git"
+  },
+  "keywords": [
+    "scss-mixins",
+    "grid-system",
+    "grid-framework",
+    "columns",
+    "column-layout",
+    "scss"
+  ],
+  "author": "Brett Smith",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/jbsmith731/superior/issues"
+  },
+  "homepage": "https://github.com/jbsmith731/superior#readme"
+}
