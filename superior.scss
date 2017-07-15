@@ -1,10 +1,10 @@
 // =======================
 // ===== DEFINE VARS =====
 // =======================
-$cols : 12;
-$gutter : 1rem;  // <-- %, em, rem, px, etc.
-                 // nested columns don't work well
-                 // with % based gutters
+$cols   : 12 !default;
+$gutter : 1rem !default;  // <-- %, em, rem, px, etc.
+                          // nested columns don't work well
+                          // with % based gutters
 
 
 
