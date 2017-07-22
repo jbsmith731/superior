@@ -43,6 +43,7 @@ The total number of columns is defaulted to the `$cols` variable but can be chan
 @mixin flex-span($span, $cols: $cols, $order: null)
 ```
 If `$order` is left null it will not be included in the compiled css.
+
 **Example:**
 ```sass
 // scss
@@ -75,7 +76,7 @@ If `$order` is left null it will not be included in the compiled css.
 ### Floated Columns
 **Mixin:**
 ```sass
-@mixin float-span($span, $cols: $cols, $float: left) {
+@mixin float-span($span, $cols: $cols, $float: left) 
 ```
 **Example:**
 ```sass
