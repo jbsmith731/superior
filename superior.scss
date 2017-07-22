@@ -61,8 +61,22 @@ $gutter : 1rem !default;  // <-- %, em, rem, px, etc.
   float: $float;
 }
 
+// =======================
+// ====== UTILITIES ======
+// =======================
+
 @mixin offset($span, $direction: left, $cols: $cols) {
   margin-#{$direction}: span($span, $cols);
+}
+
+@mixin push($i, $cols: $cols) {
+  position: relative;
+  left: percentage($i / $cols);
+}
+
+@mixin pull($i, $cols: $cols) {
+  position: relative;
+  right: percentage($i / $cols);
 }
 
 @mixin clearfix {
