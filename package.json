@@ -16,7 +16,10 @@
     "grid-framework",
     "columns",
     "column-layout",
-    "scss"
+    "scss",
+    "flexbox",
+    "flexbox-grid",
+    "flexbox-layout"
   ],
   "author": "Brett Smith",
   "license": "SEE LICENSE IN LICENSE",
