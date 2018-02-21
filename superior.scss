@@ -61,6 +61,14 @@ $gutter : 1rem !default;  // <-- %, em, rem, px, etc.
   float: $float;
 }
 
+@mixin makeClasses() {
+  @for $i from 1 through $cols {
+    .col-#{$i} {
+      @include flex-span($i)
+    }
+  }
+}
+
 // =======================
 // ====== UTILITIES ======
 // =======================
