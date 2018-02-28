@@ -214,16 +214,44 @@ The clearfix mixin is already included in the `cols()` mixin if `$flex: false`
 ```
 
 ## Bonus
-### Make Columns
-Don't want to use the mixins? Use `makeClasses()` to output a class for every column size. (Only outputs flexbox columns).
+### Make Classes
+Don't want to use the mixins? Use `makeClasses()` to output a class for every column size.
+**Mixin:**
+```scss
+@include makeClasses($flex: true);
+```
+
 ```scss
 // scss
-@include makeCols();
+@include makeClasses;
 
 // compiled css
-.col-1 {...}
+.col-1 {
+  flex: 0 1 8.3333333333%;
+  max-width: 8.3333333333%;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+}
 .col-2 {...}
 .col-3 {...}
 .col-4 {...}
 ...
 ```
+Prefer floated columns? Set `$flex` to false.
+```scss
+// scss
+@include makeClasses(false);
+
+// compiled css
+.col-1 {
+  width: 8.3333333333%;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+  float: left;
+}
+.col-2 {...}
+.col-3 {...}
+.col-4 {...}
+...
+```
+
