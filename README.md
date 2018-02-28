@@ -57,7 +57,7 @@ If `$order` is left null it will not be included in the compiled css.
 
 // compiled css
 .my-div {
-  flex: 0 1 25%
+  flex: 0 1 25%;
   max-width: 25%;
   padding: 0 0.5rem;
   box-sizing: border-box;
@@ -71,7 +71,7 @@ If `$order` is left null it will not be included in the compiled css.
 
 // compiled css
 .my-div {
-  flex: 0 1 50%
+  flex: 0 1 50%;
   max-width: 50%;
   padding: 0 0.5rem;
   box-sizing: border-box;
@@ -100,7 +100,7 @@ To add new flex dimensions on an element that already has `makeFlex` use `update
 
 // compiled css
 .my-div {
-  flex: 0 1 25%
+  flex: 0 1 25%;
   max-width: 25%;
   padding: 0 0.5rem;
   box-sizing: border-box;
