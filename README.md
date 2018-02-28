@@ -212,3 +212,18 @@ The clearfix mixin is already included in the `cols()` mixin if `$flex: false`
 ```scss
 @include clearfix;
 ```
+
+## Bonus
+### Make Columns
+Don't want to use the mixins? Use `makeClasses()` to output a class for every column size. (Only outputs flexbox columns).
+```scss
+// scss
+@include makeCols();
+
+// compiled css
+.col-1 {...}
+.col-2 {...}
+.col-3 {...}
+.col-4 {...}
+...
+```
