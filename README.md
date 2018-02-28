@@ -221,7 +221,7 @@ Don't want to use the mixins? Use `makeClasses()` to output a class for every co
 ```scss
 @include makeClasses($flex: true);
 ```
-
+**Flexbox Example:**
 ```scss
 // scss
 @include makeClasses;
@@ -238,6 +238,8 @@ Don't want to use the mixins? Use `makeClasses()` to output a class for every co
 .col-4 {...}
 ...
 ```
+**Floated Example:**
+
 Prefer floated columns? Set `$flex` to false.
 ```scss
 // scss
