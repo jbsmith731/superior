@@ -5,6 +5,28 @@ Superior is a small collection of scss mixins that allow for less code bloat and
 
 [Demo](https://codepen.io/jbsmith731/pen/xYmgyW)
 
+## Install
+**NPM**
+```bash
+npm install superior@next --save
+```
+**Yarn**
+```bash
+yarn add superior@next
+```
+**CDN**
+```
+https://cdn.jsdelivr.net/npm/superior-scss@next/superior.scss"
+```
+
+**Import into scss**
+```scss
+// scss
+@import "~superior";
+...
+```
+---
+
 ### Default Variables
 ```scss
 $cols   : 12 !default;
