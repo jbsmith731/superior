@@ -13,7 +13,7 @@ $gutter : 1rem !default;
 Superior defaults to a 12 column grid system with 16px gutters. Gutters can be set to pixel, em, rem etc. although percentage gutters are not recommended due to issues when nesting.
 
 ## Column Wrapper (row)
-All columns need to be wrapped with a `div` that uses the `cols()` mixin.
+All columns need to be wrapped with a `div` that uses the `cols()` mixin. It is **NOT** recommended to use `cols()` directly on your `.container` element. 
 
 **Mixin:**
 ```scss
