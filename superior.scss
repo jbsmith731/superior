@@ -73,11 +73,17 @@ $gutter : 1rem !default;  // <-- %, em, rem, px, etc.
 
 // *New*
 // Output class names for each column
-@mixin makeClasses() {
+@mixin makeClasses($flex: true) {
   @for $i from 1 through $cols {
+    
     .col-#{$i} {
-      @include flex-span($i)
+      @if $flex == true {
+        @include makeFlex($i);
+      } @else {
+        @include makeFloat($i)
+      }
     }
+
   }
 }
 
