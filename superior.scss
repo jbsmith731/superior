@@ -7,18 +7,18 @@ $gutter : 1rem !default;  // <-- %, em, rem, px, etc.
                           // with % based gutters
 
 
-
- // =======================
- // ====== FUNCTIONS ======
- // =======================
- @function span($span, $cols: $cols) {
-   @return percentage($span / $cols);
- }
+// Returns percentage of span to cols
+@function span($span, $cols: $cols) {
+  @return percentage($span / $cols);
+}
 
 
 // =======================
 // ==== DEFINE MIXINS ====
 // =======================
+
+// Column wrapper/parent
+// aka row
 @mixin cols($flex: flex, $dir: row, $wrap: wrap, $justify: flex-start, $align-items: flex-start) {
   margin: 0 $gutter / -2;
 
@@ -37,30 +37,42 @@ $gutter : 1rem !default;  // <-- %, em, rem, px, etc.
   }
 }
 
-@mixin span($span, $cols: $cols, $flex: false) {
+// caculate percentage flex needs to span
+@mixin updateFlex($span, $cols: $cols) {
+  flex: 0 1 span($span, $cols);
+  max-width: span($span, $cols);
+}
+
+// calculate span for float or flex
+// add padding/box sizing to account for gutters
+@mixin makeSpan($span, $cols: $cols, $flex: false) {
   @if $flex == true {
-    flex: 0 1 span($span, $cols);
-  } else {
+    @include updateFlex($span, $cols);
+  } @else {
     width: span($span, $cols);
   }
   padding: 0 $gutter / 2;
   box-sizing: border-box;
 }
 
-
-@mixin flex-span($span, $cols: $cols, $order: null) {
-  @include span($span, $cols, true);
+// make a flexbox column
+// accepts order param
+@mixin makeFlex($span, $cols: $cols, $order: null) {
+  @include makeSpan($span, $cols, true);
 
   @if $order {
     order: $order;
   }
 }
 
-@mixin float-span($span, $cols: $cols, $float: left) {
-  @include span($span, $cols);
+// make a flexbox column
+@mixin makeFloat($span, $cols: $cols, $float: left) {
+  @include makeSpan($span, $cols);
   float: $float;
 }
 
+// *New*
+// Output class names for each column
 @mixin makeClasses() {
   @for $i from 1 through $cols {
     .col-#{$i} {
@@ -69,10 +81,10 @@ $gutter : 1rem !default;  // <-- %, em, rem, px, etc.
   }
 }
 
+
 // =======================
 // ====== UTILITIES ======
 // =======================
-
 @mixin offset($span, $direction: left, $cols: $cols) {
   margin-#{$direction}: span($span, $cols);
 }
@@ -87,6 +99,8 @@ $gutter : 1rem !default;  // <-- %, em, rem, px, etc.
   right: percentage($i / $cols);
 }
 
+// clear floats... included by default
+// in makeFloat()
 @mixin clearfix {
 	&:after {
 		content: "";
@@ -94,3 +108,26 @@ $gutter : 1rem !default;  // <-- %, em, rem, px, etc.
 		clear: both;
 	}
 }
+
+
+// MIT License
+//
+// Copyright (c) 2017 Brett Smith
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+//
+// The above copyright notice and this permission notice shall be included in all
+// copies or substantial portions of the Software.
+//
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+// SOFTWARE.
