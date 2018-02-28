@@ -23,7 +23,7 @@ All columns need to be wrapped with a `div` that uses the `cols()` mixin.
 ```scss
 // scss
 .my-div {
-  @include cols()
+  @include cols();
 }
 
 // compiled css
