@@ -2,7 +2,7 @@
   "name": "superior-scss",
   "version": "2.2.0",
   "description": "Flexible scss grid system",
-  "main": "superior.scss",
+  "main": "./src/superior.scss",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -26,5 +26,12 @@
   "bugs": {
     "url": "https://github.com/jbsmith731/superior/issues"
   },
-  "homepage": "https://github.com/jbsmith731/superior#readme"
+  "homepage": "https://github.com/jbsmith731/superior#readme",
+  "devDependencies": {
+    "sass-lint": "^1.12.1"
+  },
+  "scripts": {
+    "sass-lint": "sass-lint -v"
+  },
+  "sasslintConfig": "./.sass-lint-config.yml"
 }
