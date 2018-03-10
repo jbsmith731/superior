@@ -1,4 +1,6 @@
-# superior.scss 3.0
+![superior.scss](https://user-images.githubusercontent.com/6562559/37244521-dc6cdf42-244f-11e8-9978-aec2de1062e9.png)
+
+
 Superior is a small collection of scss mixins that allow for less code bloat and more flexibility! Highly influenced and inspired by [Susy](http://oddbird.net/susy/) and [Bootstrap](http://getbootstrap.com/).
 
 *Superior does not include browser prefixes. Superior was created under the assumption most developers use autoprefixers for the most control of browser support.*
