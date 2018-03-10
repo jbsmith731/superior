@@ -1,13 +1,13 @@
 // =======================
 // ===== DEFINE VARS =====
 // =======================
-$cols: 12 !default;
-$gutter: 1rem !default;
+$superior-cols: 12 !default;
+$superior-gutter: 1rem !default;
 
 
 
 // Returns percentage of span to cols
-@function span($span, $cols: $cols) {
+@function span($span, $cols: $superior-cols) {
   @return percentage($span / $cols);
 }
 
@@ -19,7 +19,7 @@ $gutter: 1rem !default;
 // Column wrapper/parent
 // aka row
 @mixin cols($flex: flex, $dir: row, $wrap: wrap, $justify: flex-start, $align-items: flex-start) {
-  margin: 0 $gutter / -2;
+  margin: 0 $superior-gutter / -2;
 
   @if $flex == false {
 
@@ -37,14 +37,14 @@ $gutter: 1rem !default;
 }
 
 // caculate percentage flex needs to span
-@mixin update-flex($span, $cols: $cols) {
+@mixin update-flex($span, $cols: $superior-cols) {
   flex: 0 1 span($span, $cols);
   max-width: span($span, $cols);
 }
 
 // calculate span for float or flex
 // add padding/box sizing to account for gutters
-@mixin make-span($span, $cols: $cols, $flex: false) {
+@mixin make-span($span, $cols: $superior-cols, $flex: false) {
   @if $flex == true {
     @include update-flex($span, $cols);
   } @else {
@@ -56,7 +56,7 @@ $gutter: 1rem !default;
 
 // make a flexbox column
 // accepts order param
-@mixin make-flex($span, $cols: $cols, $order: null) {
+@mixin make-flex($span, $cols: $superior-cols, $order: null) {
   @include make-span($span, $cols, true);
 
   @if $order {
@@ -65,7 +65,7 @@ $gutter: 1rem !default;
 }
 
 // make a flexbox column
-@mixin make-float($span, $cols: $cols, $float: left) {
+@mixin make-float($span, $cols: $superior-cols, $float: left) {
   @include make-span($span, $cols);
   float: $float;
 }
@@ -94,12 +94,12 @@ $gutter: 1rem !default;
   margin-#{$direction}: span($span, $cols);
 }
 
-@mixin push($i, $cols: $cols) {
+@mixin push($i, $cols: $superior-cols) {
   position: relative;
   left: percentage($i / $cols);
 }
 
-@mixin pull($i, $cols: $cols) {
+@mixin pull($i, $cols: $superior-cols) {
   position: relative;
   right: percentage($i / $cols);
 }
