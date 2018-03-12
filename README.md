@@ -31,8 +31,8 @@ https://cdn.jsdelivr.net/npm/superior-scss@next/superior.scss"
 
 ### Default Variables
 ```scss
-$cols   : 12 !default;
-$gutter : 1rem !default;
+$superior-cols   : 12 !default;
+$superior-gutter : 1rem !default;
 ```
 Superior defaults to a 12 column grid system with 16px gutters. Gutters can be set to pixel, em, rem etc. although percentage gutters are not recommended due to issues when nesting.
 
@@ -68,7 +68,7 @@ The total number of columns is defaulted to the `$cols` variable but can be chan
 ### Flexbox columns
 **Mixin:**
 ```scss
-@mixin makeFlex($span, $cols: $cols, $order: null)
+@mixin make-flex($span, $cols: $cols, $order: null)
 ```
 If `$order` is left null it will not be included in the compiled css.
 
@@ -76,7 +76,7 @@ If `$order` is left null it will not be included in the compiled css.
 ```scss
 // scss
 .my-div {
-  @include makeFlex(3);
+  @include make-flex(3);
 }
 
 // compiled css
@@ -90,7 +90,7 @@ If `$order` is left null it will not be included in the compiled css.
 
 // scss
 .my-div {
-  @include makeFlex(6, $order: 2);
+  @include make-flex(6, $order: 2);
 }
 
 // compiled css
@@ -108,17 +108,17 @@ To add new flex dimensions on an element that already has `makeFlex` use `update
 
 **Mixin:**
 ```scss
-@mixin updateFlex($span, $cols: $cols)
+@mixin update-flex($span, $cols: $cols)
 ```
 
 **Example:**
 ```scss
 // scss
 .my-div {
-  @include makeFlex(3);
+  @include make-flex(3);
   
   @media(...) {
-    @include updateFlex(12);
+    @include update-flex(12);
   }
 }
 
@@ -141,13 +141,13 @@ To add new flex dimensions on an element that already has `makeFlex` use `update
 ### Floated Columns
 **Mixin:**
 ```scss
-@mixin makeFloat($span, $cols: $cols, $float: left) 
+@mixin make-float($span, $cols: $cols, $float: left) 
 ```
 **Example:**
 ```scss
 // scss
 .my-div {
-  @include makeFloat(4);
+  @include makefloat(4);
 }
 
 // compiled css
@@ -221,12 +221,12 @@ Don't want to use the mixins? Use `makeClasses()` to output a class for every co
 
 **Mixin:**
 ```scss
-@include makeClasses($flex: true);
+@include make-classes($flex: true);
 ```
 **Flexbox Example:**
 ```scss
 // scss
-@include makeClasses;
+@include make-classes;
 
 // compiled css
 .col-1 {
@@ -245,7 +245,7 @@ Don't want to use the mixins? Use `makeClasses()` to output a class for every co
 Prefer floated columns? Set `$flex` to false.
 ```scss
 // scss
-@include makeClasses(false);
+@include make-classes(false);
 
 // compiled css
 .col-1 {
