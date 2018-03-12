@@ -147,7 +147,7 @@ To add new flex dimensions on an element that already has `makeFlex` use `update
 ```scss
 // scss
 .my-div {
-  @include makefloat(4);
+  @include make-float(4);
 }
 
 // compiled css
