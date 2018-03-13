@@ -50,7 +50,7 @@ $superior-gutter: 1rem !default;
   } @else {
     width: span($span, $cols);
   }
-  padding: 0 $gutter / 2;
+  padding: 0 $superior-gutter / 2;
   box-sizing: border-box;
 }
 
