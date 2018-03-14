@@ -73,7 +73,7 @@ $superior-gutter: 1rem !default;
 // *New*
 // Output class names for each column
 @mixin make-classes($flex: true) {
-  @for $i from 1 through $cols {
+  @for $i from 1 through $superior-cols {
 
     .col-#{$i} {
       @if $flex == true {
@@ -90,7 +90,7 @@ $superior-gutter: 1rem !default;
 // =======================
 // ====== UTILITIES ======
 // =======================
-@mixin offset($span, $direction: left, $cols: $cols) {
+@mixin offset($span, $direction: left, $cols: $superior-cols) {
   margin-#{$direction}: span($span, $cols);
 }
 
