@@ -10,15 +10,15 @@ Superior is a small collection of scss mixins that allow for less code bloat and
 ## Install
 **NPM**
 ```bash
-npm install superior@next --save
+npm install superior --save
 ```
 **Yarn**
 ```bash
-yarn add superior@next
+yarn add superior
 ```
 **CDN**
 ```
-https://cdn.jsdelivr.net/npm/superior-scss@next/superior.scss"
+https://cdn.jsdelivr.net/npm/superior-scss/superior.scss"
 ```
 
 **Import into scss**
@@ -37,7 +37,7 @@ $superior-gutter : 1rem !default;
 Superior defaults to a 12 column grid system with 16px gutters. Gutters can be set to pixel, em, rem etc. although percentage gutters are not recommended due to issues when nesting.
 
 ## Column Wrapper (row)
-All columns need to be wrapped with a `div` that uses the `cols()` mixin. It is **NOT** recommended to use `cols()` directly on your `.container` element. 
+All columns need to be wrapped with a `div` that uses the `cols()` mixin. It is **NOT** recommended to use `cols()` directly on your `.container` element.
 
 **Mixin:**
 ```scss
@@ -116,7 +116,7 @@ To add new flex dimensions on an element that already has `makeFlex` use `update
 // scss
 .my-div {
   @include make-flex(3);
-  
+
   @media(...) {
     @include update-flex(12);
   }
@@ -141,7 +141,7 @@ To add new flex dimensions on an element that already has `makeFlex` use `update
 ### Floated Columns
 **Mixin:**
 ```scss
-@mixin make-float($span, $cols: $cols, $float: left) 
+@mixin make-float($span, $cols: $cols, $float: left)
 ```
 **Example:**
 ```scss
@@ -259,4 +259,3 @@ Prefer floated columns? Set `$flex` to false.
 .col-4 {...}
 ...
 ```
-
