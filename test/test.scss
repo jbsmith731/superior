@@ -1,0 +1,179 @@
+// sass-lint:disable leading-zero quotes
+@import "true";
+@import "../src/superior";
+
+
+@include describe('span [function]') {
+  @include it('calculates percentage based on span / cols') {
+
+    // Assert the expected results
+    @include assert-equal(
+      span(6),
+      50%);
+  }
+}
+
+
+@include describe('cols [mixin]') {
+  @include it('Create cols') {
+    @include assert {
+      @include output {
+        @include cols;
+      }
+
+      @include expect {
+        margin: 0 -0.5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        align-items: flex-start;
+      }
+    }
+  }
+}
+
+
+@include describe('update-flex [mixin]') {
+  @include it('Update flex mixin') {
+    @include assert {
+      @include output {
+        @include update-flex(12);
+      }
+
+      @include expect {
+        flex: 0 1 100%;
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+
+@include describe('make-span [mixin]') {
+  @include it('make span mixin') {
+    @include assert {
+      @include output {
+        @include make-span(12, $flex: true);
+      }
+
+      @include expect {
+        flex: 0 1 100%;
+        max-width: 100%;
+        padding: 0 0.5rem;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+
+@include describe('make-flex [mixin]') {
+  @include it('make flex mixin') {
+    @include assert {
+      @include output {
+        @include make-flex(12);
+      }
+
+      @include expect {
+        flex: 0 1 100%;
+        max-width: 100%;
+        padding: 0 0.5rem;
+        box-sizing: border-box;
+      }
+    }
+  }
+}
+
+
+@include describe('make-float [mixin]') {
+  @include it('make float mixin') {
+    @include assert {
+      @include output {
+        @include make-float(12);
+      }
+
+      @include expect {
+        width: 100%;
+        padding: 0 0.5rem;
+        box-sizing: border-box;
+        float: left;
+      }
+    }
+  }
+}
+
+
+@include describe('offset [mixin]') {
+  @include it('create offset') {
+    @include assert {
+      @include output {
+        @include offset(6);
+      }
+
+      @include expect {
+        margin-left: 50%;
+      }
+    }
+  }
+}
+
+
+@include describe('push [mixin]') {
+  @include it('create offset') {
+    @include assert {
+      @include output {
+        @include push(6);
+      }
+
+      @include expect {
+        position: relative;
+        left: 50%;
+      }
+    }
+  }
+}
+
+
+@include describe('pull [mixin]') {
+  @include it('create offset') {
+    @include assert {
+      @include output {
+        @include pull(6);
+      }
+
+      @include expect {
+        position: relative;
+        right: 50%;
+      }
+    }
+  }
+}
+
+// update cols var here so doesn't mess up other test results
+$superior-cols: 2;
+@include describe('make-classes [mixin]') {
+  @include it('output classes for each column in $superior-cols') {
+    @include assert {
+      @include output {
+        @include make-classes;
+      }
+
+      @include expect {
+        .col-1 {
+          flex: 0 1 50%;
+          max-width: 50%;
+          padding: 0 0.5rem;
+          box-sizing: border-box;
+        }
+
+        .col-2 {
+          flex: 0 1 100%;
+          max-width: 100%;
+          padding: 0 0.5rem;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+}

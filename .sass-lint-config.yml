@@ -4,7 +4,7 @@
 
 files:
   ignore:
-    - '../assets/scss/vendor/**.scss'
+    - 'node_modules/**'
     - '../assets/scss/general/reset.scss'
 rules:
   class-name-format:

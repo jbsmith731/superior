@@ -4,7 +4,8 @@
   "description": "Flexible scss grid system",
   "main": "./src/superior.scss",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass-lint": "sass-lint -v",
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -28,10 +29,9 @@
   },
   "homepage": "https://github.com/jbsmith731/superior#readme",
   "devDependencies": {
-    "sass-lint": "^1.12.1"
-  },
-  "scripts": {
-    "sass-lint": "sass-lint -v"
+    "mocha": "^5.0.4",
+    "sass-lint": "^1.12.1",
+    "sass-true": "^3.1.0"
   },
   "sasslintConfig": "./.sass-lint-config.yml"
 }
