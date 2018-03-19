@@ -1,7 +1,7 @@
 ![superior.scss](https://user-images.githubusercontent.com/6562559/37244521-dc6cdf42-244f-11e8-9978-aec2de1062e9.png)
 
 
-Superior is a complete grid system powered by scss mixins that allowing less code bloat and more flexibility! Highly influenced and inspired by [Susy](http://oddbird.net/susy/) and [Bootstrap](http://getbootstrap.com/).
+Superior is a complete grid system powered by scss mixins that reduce code bloat and allow more flexibility! Highly influenced and inspired by [Susy](http://oddbird.net/susy/) and [Bootstrap](http://getbootstrap.com/).
 
 *Superior does not include browser prefixes. Superior was created under the assumption most developers use autoprefixers for the most control of browser support.*
 
@@ -70,7 +70,7 @@ The total number of columns is defaulted to the `$cols` variable but can be chan
 ```scss
 @mixin make-flex($span, $cols: $cols, $order: null)
 ```
-If `$order` is left null it will not be included in the compiled css.
+If `$order` is left null it will not be included in the compiled css. **Note**: The column count passed to the mixin can be a decimal number (ex: `make-flex(4.5)`).
 
 **Example:**
 ```scss
