@@ -73,6 +73,16 @@ $superior-gutter: 1rem !default;
 // *New*
 // Output class names for each column
 @mixin make-classes($flex: true) {
+  @if $flex == true {
+    .cols {
+      @include cols;
+    }
+  } @else {
+    .cols {
+      @include cols($flex: false);
+    }
+  }
+
   @for $i from 1 through $superior-cols {
 
     .col-#{$i} {

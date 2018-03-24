@@ -153,13 +153,22 @@
 // update cols var here so doesn't mess up other test results
 $superior-cols: 2;
 @include describe('make-classes [mixin]') {
-  @include it('output classes for each column in $superior-cols') {
+  @include it('output flexbox classes for each column in $superior-cols') {
     @include assert {
       @include output {
         @include make-classes;
       }
 
       @include expect {
+        .cols {
+          margin: 0 -0.5rem;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+
         .col-1 {
           flex: 0 1 50%;
           max-width: 50%;
@@ -172,6 +181,42 @@ $superior-cols: 2;
           max-width: 100%;
           padding: 0 0.5rem;
           box-sizing: border-box;
+        }
+      }
+    }
+  }
+}
+
+@include describe('make-classes(false) [mixin]') {
+  @include it('output floated classes for each column in $superior-cols') {
+    @include assert {
+      @include output {
+        @include make-classes(false);
+      }
+
+      @include expect {
+        .cols {
+          margin: 0 -0.5rem;
+        }
+
+        .cols::after {
+          content: '';
+          display: table;
+          clear: both;
+        }
+
+        .col-1 {
+          width: 50%;
+          padding: 0 0.5rem;
+          box-sizing: border-box;
+          float: left;
+        }
+
+        .col-2 {
+          width: 100%;
+          padding: 0 0.5rem;
+          box-sizing: border-box;
+          float: left;
         }
       }
     }

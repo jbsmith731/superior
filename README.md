@@ -229,6 +229,15 @@ Don't want to use the mixins? Use `makeClasses()` to output a class for every co
 @include make-classes;
 
 // compiled css
+.cols {
+  margin: 0 -0.5rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
 .col-1 {
   flex: 0 1 8.3333333333%;
   max-width: 8.3333333333%;
@@ -248,6 +257,17 @@ Prefer floated columns? Set `$flex` to false.
 @include make-classes(false);
 
 // compiled css
+.cols {
+  margin: 0 -0.5rem;
+
+}
+
+.cols::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
 .col-1 {
   width: 8.3333333333%;
   padding: 0 0.5rem;
