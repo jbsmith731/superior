@@ -160,6 +160,15 @@ $superior-cols: 2;
       }
 
       @include expect {
+        .cols {
+          margin: 0 -0.5rem;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          align-items: flex-start;
+        }
+
         .col-1 {
           flex: 0 1 50%;
           max-width: 50%;
