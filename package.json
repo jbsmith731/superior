@@ -1,6 +1,6 @@
 {
   "name": "superior-scss",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Flexible scss grid system",
   "main": "./src/superior.scss",
   "scripts": {
