@@ -10,11 +10,11 @@ Superior is a complete grid system powered by scss mixins that reduce code bloat
 ## Install
 **NPM**
 ```bash
-npm install superior --save
+npm install superior-scss --save
 ```
 **Yarn**
 ```bash
-yarn add superior
+yarn add superior-scss
 ```
 **CDN**
 ```
