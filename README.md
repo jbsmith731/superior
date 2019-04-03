@@ -198,7 +198,7 @@ span($span, $cols: $cols)
 ```scss
 // scss
 .my-div {
-  @include offset(4);
+  @include offset(3);
 }
 
 // compiled css
