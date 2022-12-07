@@ -39,7 +39,7 @@
   },
   "homepage": "https://github.com/jbsmith731/superior#readme",
   "devDependencies": {
-    "lint-staged": "^8.0.5",
+    "lint-staged": "^13.1.0",
     "mocha": "^5.2.0",
     "node-sass": "^4.10.0",
     "pre-commit": "^1.2.2",
